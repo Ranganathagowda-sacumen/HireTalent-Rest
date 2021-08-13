@@ -5,8 +5,8 @@ import com.hiretalent.rest.HireTalentRest.repository.RequisitionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import java.util.List;
+import java.util.Optional;
 
 @Transactional
 @Service("requisitionService")
@@ -26,8 +26,8 @@ public class RequisitionServiceImpl implements RequisitionService{
     }
 
     @Override
-    public Requisition getRequisitionById(int requisitionId) {
-        return requisitionRepository.findById(requisitionId).get();
+    public Optional<Requisition> getRequisitionById(int requisitionId) {
+        return requisitionRepository.findById(requisitionId);
     }
 
 }

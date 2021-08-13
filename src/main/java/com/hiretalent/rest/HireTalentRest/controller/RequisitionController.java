@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class RequisitionController {
@@ -24,7 +25,7 @@ public class RequisitionController {
     }
 
     @GetMapping("/getRequisition/{requisitionId}")
-    public Requisition getRequisitionById(@PathVariable int requisitionId) {
+    public Optional<Requisition> getRequisitionById(@PathVariable int requisitionId) {
         return reqService.getRequisitionById(requisitionId);
     }
 
